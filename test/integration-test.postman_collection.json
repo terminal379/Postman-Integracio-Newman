@@ -1,0 +1,81 @@
+{
+	"info": {
+		"_postman_id": "21c85940-5ad2-4283-abf3-22c88fe3ece6",
+		"name": "Integration-Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Veure llibres a la BBDD",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3d877d63-6822-4ebb-968f-e35c56c224ee",
+						"exec": [
+							"pm.test(\"Codi de resposta 200\", function(){",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base-url}}/llibres",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"llibres"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Guardar un nou llibre",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0c58688c-247b-4c22-9348-63d2c1a042e4",
+						"exec": [
+							"pm.test(\"Codi de resposta 201\", function(){",
+							"    pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nom\": \"llibre1\",\n    \"autor\": \"autor 1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base-url}}/llibres",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"llibres"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

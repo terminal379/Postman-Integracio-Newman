@@ -1,0 +1,17 @@
+{
+  "name": "rest-api-mern",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "integration-test": "cd ./test && node integration.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.10.18",
+    "newman": "^5.2.1"
+  }
+}
